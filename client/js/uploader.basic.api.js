@@ -456,6 +456,10 @@ qq.basePrivateApi = {
                     self._onProgress(id, name, loaded, total);
                     self._options.callbacks.onProgress(id, name, loaded, total);
                 },
+                onUploadedChunk: function(id, name, response, xhr){
+                    self._onUploadedChunk(id, name, response, xhr);
+                    self._options.callbacks.onUploadedChunk(id, name, response, xhr);
+                },
                 onComplete: function(id, name, result, xhr){
                     var retVal = self._onComplete(id, name, result, xhr);
 
@@ -613,6 +617,10 @@ qq.basePrivateApi = {
     },
 
     _onProgress: function(id, name, loaded, total) {
+        //nothing to do yet in core uploader
+    },
+
+    _onUploadedChunk: function(id, name, response, xhr) {
         //nothing to do yet in core uploader
     },
 
